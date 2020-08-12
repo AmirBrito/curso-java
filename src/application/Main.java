@@ -12,6 +12,25 @@ public class Main {
 		Locale.setDefault(Locale.US);
 		Scanner sc = new Scanner(System.in);
 		
+		Product product = new Product();
+		
+		System.out.println("Enter the product data:");
+		System.out.print("Name: ");		
+		String name = sc.nextLine();
+		product.setName(name);
+		System.out.print("Price: ");
+		double price = sc.nextDouble();
+		product.setPrice(price);
+		System.out.println("Quantity: ");
+		int quantity = sc.nextInt();
+		product.addProducts(quantity);
+		
+		System.out.println(product.getName() + ", " + product.getPrice() + ", " + product.getQuantity());		
+		
+		
+		
+		
+		sc.close();
 
 	}
 

@@ -2,9 +2,9 @@ package entities;
 
 public class Product {
 	
-	public String name;
-	public double price;
-	public int quantity;
+	private String name;
+	private double price;
+	private int quantity;
 	
 	
 	public void setName(String name) {
@@ -27,15 +27,15 @@ public class Product {
 		return this.quantity;
 	}
 	
-	public double TotalValueInStock() {
-		return this.quantity * this.price;
+	public double totalValueInStock() {
+		return price * quantity;
 	}
 
-	public void AddProducts(int quantity) {
+	public void addProducts(int quantity) {
 		this.quantity += quantity;
 	}
 	
-	public void RemoveProducts(int quantity) {
+	public void removeProducts(int quantity) {
 		this.quantity -= quantity;
 	}
 }
