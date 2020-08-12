@@ -3,7 +3,7 @@ package application;
 import java.util.Locale;
 import java.util.Scanner;
 
-import entities.Product;
+import entities.Rectangle;
 
 public class Main {
 
@@ -12,32 +12,19 @@ public class Main {
 		Locale.setDefault(Locale.US);
 		Scanner sc = new Scanner(System.in);
 		
-		Product product = new Product();
+		Rectangle rectangle = new Rectangle();
 		
-		System.out.println("Enter the product data:");
-		System.out.print("Name: ");		
-		String name = sc.nextLine();
-		product.setName(name);
-		System.out.print("Price: ");
-		double price = sc.nextDouble();
-		product.setPrice(price);
-		System.out.println("Quantity: ");
-		int quantity = sc.nextInt();
-		product.addProducts(quantity);
+		System.out.println("Enter rectangle width and height: ");
+		double width = sc.nextDouble();
+		double height = sc.nextDouble();
 		
-		System.out.println(product);
+		rectangle.setWidth(width);
+		rectangle.setHeight(height);
 		
-		System.out.println("Add number of products: ");
-		quantity = sc.nextInt();
-		product.addProducts(quantity);
+		System.out.println(rectangle.area());
+		System.out.println(rectangle.perimeter());
+		System.out.println(rectangle.diagonal());
 		
-		System.out.println(product);
-		
-		System.out.println("Remove number of products: ");
-		quantity = sc.nextInt();
-		product.removeProducts(quantity);
-		
-		System.out.println(product);		
 		
 		sc.close();
 
