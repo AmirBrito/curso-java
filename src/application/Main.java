@@ -25,10 +25,19 @@ public class Main {
 		int quantity = sc.nextInt();
 		product.addProducts(quantity);
 		
-		System.out.println(product.getName() + ", " + product.getPrice() + ", " + product.getQuantity());		
+		System.out.println(product);
 		
+		System.out.println("Add number of products: ");
+		quantity = sc.nextInt();
+		product.addProducts(quantity);
 		
+		System.out.println(product);
 		
+		System.out.println("Remove number of products: ");
+		quantity = sc.nextInt();
+		product.removeProducts(quantity);
+		
+		System.out.println(product);		
 		
 		sc.close();
 
