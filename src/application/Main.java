@@ -3,7 +3,7 @@ package application;
 import java.util.Locale;
 import java.util.Scanner;
 
-import entities.Student;
+import utilities.CurrencyConverter;
 
 
 
@@ -15,32 +15,15 @@ public class Main {
 		Locale.setDefault(Locale.US);
 		Scanner sc = new Scanner(System.in);
 		
-		Student student = new Student();
+		System.out.println("Dollar price: ");
+		double dollarPrice = sc.nextDouble();
 		
-		System.out.println("Informe os dados do estudante: ");
-		System.out.println("Nome: ");
-		String name = sc.nextLine();
-		System.out.println("Nota 1:");
-		int nota = sc.nextInt();
+		System.out.println("Amount of dollars bought: ");
+		double amount = sc.nextDouble();
 		
-		student.setName(name);
-		student.setNota1(nota);
+		double result = CurrencyConverter.converter(dollarPrice, amount);
 		
-		System.out.println("Nota 2:");
-		nota = sc.nextInt();
-		student.setNota2(nota);
-		
-		System.out.println("Nota 3:");
-		nota = sc.nextInt();
-		student.setNota3(nota);
-		
-		System.out.printf("Nota final = %.2f%n", student.notaFinal());
-		if(student.notaFinal() < 60) {
-			System.out.printf("Reprovado! Falta: %.2f%n", student.faltaPontos());
-		}
-		else {
-			System.out.println("Aprovado!");
-		}
+		System.out.printf("Amount to be paid in reais: $ %.2f%n", result);
 		
 			
 		sc.close();
