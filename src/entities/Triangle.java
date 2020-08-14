@@ -2,9 +2,9 @@ package entities;
 
 public class Triangle {
 	
-	public double a;
-	public double b;
-	public double c;
+	private double a;
+	private double b;
+	private double c;
 	
 	
 	public double area() {
