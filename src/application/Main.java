@@ -3,8 +3,7 @@ package application;
 import java.util.Locale;
 import java.util.Scanner;
 
-import entities.Product2;
-
+import entities.Student;
 
 
 public class Main {
@@ -14,29 +13,33 @@ public class Main {
 		Locale.setDefault(Locale.US);
 		Scanner sc = new Scanner(System.in);
 		
-		// vetores com tipo class;
 		
-		int size = sc.nextInt();
-		Product2[] vector = new Product2[size];
+		System.out.println("How many rooms will be rented??");
+		int rent = sc.nextInt();
+		int size = 10;
+		Student[] room = new Student[size];
 		
-		for(int i=0; i<vector.length; i++) {
+		for(int i=0; i<rent; i++) {
+			
 			sc.nextLine();			
+			System.out.println("Inform the room: ");			
+			int roomNumber = sc.nextInt();
+			sc.nextLine();
+			
+			System.out.println("Inform name: ");
 			String name = sc.nextLine();
-			double price = sc.nextDouble();
 			
-			vector[i] = new Product2(name, price);			
+			System.out.println("Inform email: ");
+			String email = sc.nextLine();
+			room[roomNumber] = new Student(name, email);			
 		}
 		
-		double sum = 0.0;
-		
-		for (int i=0; i<vector.length; i++) {
-			
-			sum += vector[i].getPrice();
+		for(int i=0; i<room.length; i++) {
+			if(room[i] != null) {
+				System.out.printf("Room: " + i + " " + room[i].toString());
+				System.out.println();
+			}
 		}
-		
-		double average = sum / vector.length;
-		
-		System.out.printf("Average price = %.2f%n", average);		
 		sc.close();
 
 	}

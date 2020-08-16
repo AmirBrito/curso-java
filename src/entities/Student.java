@@ -3,9 +3,12 @@ package entities;
 public class Student {
 	
 	private String name;
-	private int nota1;
-	private int nota2;
-	private int nota3;
+	private String email;	
+	
+	public Student(String name, String email) {
+		this.name = name;
+		this.email = email;
+	}
 	
 	public String getName() {
 		return name;
@@ -13,35 +16,15 @@ public class Student {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public int getNota1() {
-		return nota1;
+	public String getEmail() {
+		return email;
 	}
-	public void setNota1(int nota1) {
-		this.nota1 = nota1;
+	public void setEmail(String email) {
+		this.email = email;
 	}
-	public int getNota2() {
-		return nota2;
-	}
-	public void setNota2(int nota2) {
-		this.nota2 = nota2;
-	}
-	public int getNota3() {
-		return nota3;
-	}
-	public void setNota3(int nota3) {
-		this.nota3 = nota3;
+
+	public String toString() {
+		return "Student [name=" + name + ", email=" + email + "]";
 	}
 	
-	public double notaFinal() {
-		return nota1 + nota2 + nota3;
-	}
-	
-	public double faltaPontos() {
-		if (notaFinal() < 60) {
-			return 60 - notaFinal();
-		}
-		else {
-			return 0;
-		}
-	}
 }
