@@ -13,40 +13,27 @@ public class Main {
 		Locale.setDefault(Locale.US);
 		Scanner sc = new Scanner(System.in);
 		
-		Account account;
+		// vetores
 		
-		System.out.println("Data account");
-		System.out.println("Account number: ");
-		int accountNumber = sc.nextInt();
-		System.out.println("Account owner: ");
-		sc.nextLine();
-		String accountOwner = sc.nextLine();
+		int size = sc.nextInt();
+		double[] vector = new double[size];
 		
-		System.out.println("Initial deposit? Y/N");
-		char answer = sc.next().charAt(0);
-		if(answer == 'y') {
-			System.out.println("Deposit value: ");
-			double initialDeposit = sc.nextDouble();			
-			account = new Account(accountNumber, accountOwner, initialDeposit);
+		for (int i=0; i<size; i++) {
 			
-		}else {
-			
-			account = new Account(accountNumber, accountOwner);
+			vector[i] = sc.nextDouble();
 		}
 		
-		System.out.println(account); 
-		System.out.println("Enter a deposit value: ");
-		double deposit = sc.nextDouble();
-		account.deposit(deposit);
-		System.out.println("Update data: ");
-		System.out.println(account);
+		double sum = 0.0;
 		
-		System.out.println("Enter a withdraw value: ");
-		double withdraw = sc.nextDouble();
-		account.withdraw(withdraw);
-		System.out.println("Update data: ");
-		System.out.println(account);
+		for(int i=0; i<size; i++) {
 			
+			sum += vector[i];
+		}
+		
+		double average = sum / size;
+		
+		System.out.println("Average height: " + average);
+		
 		sc.close();
 
 	}
