@@ -1,9 +1,11 @@
 package application;
 
+import java.util.Date;
 import java.util.Locale;
 import java.util.Scanner;
 
-import entities.Student;
+import entities.Order;
+import entities.enums.OrderStatus;
 
 
 public class Main {
@@ -14,32 +16,10 @@ public class Main {
 		Scanner sc = new Scanner(System.in);
 		
 		
-		System.out.println("How many rooms will be rented??");
-		int rent = sc.nextInt();
-		int size = 10;
-		Student[] room = new Student[size];
+		Order order = new Order(1080, new Date(), OrderStatus.PENDING_PAYMENT);
 		
-		for(int i=0; i<rent; i++) {
-			
-			sc.nextLine();			
-			System.out.println("Inform the room: ");			
-			int roomNumber = sc.nextInt();
-			sc.nextLine();
-			
-			System.out.println("Inform name: ");
-			String name = sc.nextLine();
-			
-			System.out.println("Inform email: ");
-			String email = sc.nextLine();
-			room[roomNumber] = new Student(name, email);			
-		}
+		System.out.println(order);
 		
-		for(int i=0; i<room.length; i++) {
-			if(room[i] != null) {
-				System.out.printf("Room: " + i + " " + room[i].toString());
-				System.out.println();
-			}
-		}
 		sc.close();
 
 	}
